@@ -1,0 +1,1 @@
+export type TM_Page = 'HOME' | 'CONFIG';

@@ -1,0 +1,52 @@
+{
+  "name": "stevie-task-manager",
+  "productName": "stevie-task-manager",
+  "description": "Stevie's task manager!",
+  "keywords": [],
+  "main": "./.webpack/main",
+  "private": true,
+  "version": "1.0.0",
+  "author": "stoth",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "cross-env NODE_ENV=production electron-forge package",
+    "make": "electron-forge make",
+    "buildnstart": "npx webpack && electron-forge start",
+    "build": "npx webpack"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@electron-forge/plugin-webpack": "^6.4.2",
+    "@electron-forge/shared-types": "^6.4.2",
+    "@tsconfig/svelte": "^5.0.2",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "autoprefixer": "^10.4.15",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "electron": "26.2.1",
+    "node-loader": "^2.0.0",
+    "postcss": "^8.4.30",
+    "postcss-load-config": "^4.0.1",
+    "postcss-loader": "^7.3.3",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "svelte": "^4.2.0",
+    "svelte-loader": "^3.1.9",
+    "svelte-preprocess": "^5.0.4",
+    "tailwindcss": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

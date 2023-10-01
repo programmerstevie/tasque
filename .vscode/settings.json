@@ -1,0 +1,10 @@
+{
+  "symbols.files.associations": {
+
+  },
+  "symbols.folders.associations": {
+    "main": "folder-app",
+    "renderer": "folder-layout"
+  },
+  "css.customData": [".vscode/css_custom_data.json"]
+}

@@ -1,0 +1,23 @@
+{
+	"extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "alwaysStrict": true,
+    "useUnknownInCatchVariables": true,
+    "strictFunctionTypes": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "moduleResolution": "bundler",
+    "allowArbitraryExtensions": true,
+    "target": "ES2020",
+    "baseUrl": "./",
+    "paths": {
+      "renderLib/*": ["src/renderer/lib/*"]
+    }
+  },
+  "include": ["src/**/*", "src/node_modules", "global.d.ts"],
+	"exclude": ["node_modules/*"],
+}

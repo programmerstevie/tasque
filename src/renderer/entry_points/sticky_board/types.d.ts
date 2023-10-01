@@ -1,0 +1,1 @@
+export type STICKY_BOARD_PAGE = 'DEFAULT' | 'ERROR';
