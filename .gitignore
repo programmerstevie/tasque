@@ -1,2 +1,7 @@
-node_modules
-out
+node_modules/
+out/
+.vscode/
+.webpack/
+dist/
+
+yarn-error.log
