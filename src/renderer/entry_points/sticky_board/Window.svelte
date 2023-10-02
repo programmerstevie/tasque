@@ -5,8 +5,6 @@
 
 <svelte:component this={$ViewComponent} />
 
-<style lang="postcss" global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+<style global>
+  /* @import url('css/global.css'); */
 </style>

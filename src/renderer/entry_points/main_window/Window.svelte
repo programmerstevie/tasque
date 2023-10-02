@@ -9,8 +9,6 @@
 </svelte:head>
 <svelte:component this={$ViewComponent} />
 
-<style lang="postcss" global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+<style global>
+  @import "../../resources/global.css";
 </style>

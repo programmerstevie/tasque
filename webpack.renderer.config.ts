@@ -1,38 +1,56 @@
 import path from "path";
 import sveltePreprocess from "svelte-preprocess";
-import Svelteloader from "svelte-loader";
-import type { Configuration } from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import Webpack, { type Configuration } from "webpack";
 
-const mode = process.env.NODE_ENV ?? "development";
+const mode = (process.env.NODE_ENV as Configuration["mode"]) ?? "development";
 const isProduction = mode === "production";
 const isDevelopment = !isProduction;
 
 const rendererConfig: Configuration = {
-  entry: "./src/renderer/main_window/main.ts",
+  mode,
   target: "web",
+
   resolve: {
     // see below for an explanation
     alias: {
       svelte: path.resolve("node_modules", "svelte/src/runtime"), // Svelte 3: path.resolve('node_modules', 'svelte')
-      renderLib: path.resolve("src/renderer/lib"),
+      renderLib: path.resolve(__dirname, "src/renderer/lib"),
+      Resources: path.resolve(__dirname, "src/renderer/resources"),
     },
     extensions: [".mjs", ".js", ".svelte", ".ts"],
     mainFields: ["svelte", "browser", "module", "main"],
     conditionNames: ["svelte", "browser", "import"],
   },
+  output: {
+    clean: true,
+  },
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
+        exclude: /svelte\.\d+\.css/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1,
+              // url: false, // necessary if you use url('/path/to/some/asset.png|jpg|gif')
+              sourceMap: true,
+              
             },
-          }
+          },
+          'postcss-loader'
         ],
+      },
+      {
+        test: /\.css$/,
+        include: /svelte\.\d+\.css/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -58,13 +76,11 @@ const rendererConfig: Configuration = {
               scss: true,
             }),
             compilerOptions: {
-              // Dev mode must be enabled for HMR to work!
               dev: isDevelopment,
             },
-            emitCss: isProduction,
+            emitCss: true,
             hotReload: isDevelopment,
             hotOptions: {
-              // List of options and defaults: https://www.npmjs.com/package/svelte-loader-hot#usage
               noPreserveState: false,
               optimistic: true,
             },
@@ -83,8 +99,24 @@ const rendererConfig: Configuration = {
           fullySpecified: false,
         },
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      'filename': 'styles.css'
+    }),
+    new Webpack.HotModuleReplacementPlugin({
+
+    })
+  ]
 };
 
 export default rendererConfig;
