@@ -16,8 +16,17 @@
     "baseUrl": "./",
     "paths": {
       "renderLib/*": ["src/renderer/lib/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "include": ["src/**/*", "src/node_modules", "global.d.ts"],
 	"exclude": ["node_modules/*"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "verbatimModuleSyntax": false
+    },
+  }
 }

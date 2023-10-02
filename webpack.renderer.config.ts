@@ -16,7 +16,6 @@ const rendererConfig: Configuration = {
     alias: {
       svelte: path.resolve("node_modules", "svelte/src/runtime"), // Svelte 3: path.resolve('node_modules', 'svelte')
       renderLib: path.resolve(__dirname, "src/renderer/lib"),
-      Resources: path.resolve(__dirname, "src/renderer/resources"),
     },
     extensions: [".mjs", ".js", ".svelte", ".ts"],
     mainFields: ["svelte", "browser", "module", "main"],

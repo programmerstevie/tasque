@@ -30,7 +30,7 @@ const mainConfig: Configuration = {
         use: {
           loader: "ts-loader",
           options: {
-            transpileOnly: true,
+            // transpileOnly: true,
           },
         },
       },
