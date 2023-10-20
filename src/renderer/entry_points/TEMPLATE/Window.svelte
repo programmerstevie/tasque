@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ViewComponent } from "./stores/page";
+  import { ViewComponent } from './stores/page';
 </script>
 
 

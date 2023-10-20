@@ -5,37 +5,28 @@
  *
  * https://www.electronjs.org/docs/latest/tutorial/sandbox
  */
-import { ipcRenderer, contextBridge } from "electron";
-import type { Main_Window_API } from './types';
+import { ipcRenderer, contextBridge } from 'electron';
+import type { MainApi } from './types';
+import { WindowActionsIPC } from './util/windowActions';
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   // const replaceText = (selector: string, text: string) => {
   //   const element = document.getElementById(selector);
   //   if (element) element.innerText = text;
   // };
-
   // for (const type of ['chrome', 'node', 'electron']) {
   //   replaceText(`${type}-version`, process.versions[type])
   // }
 });
 
-const api: Main_Window_API = {
-  /**
-   * sends a message through channel A
-   * 
-   * @param msg - the message you want to send
-   */
-  closeWindow: function () {
-    ipcRenderer.invoke("MAIN_WINDOW", 'CLOSE');
-  },
-  /**
-   * puts a callback on messages sent from main through channel B
-   * 
-   * @param func 
-   */
-  receiveFromB: function (func: Function) {
-    ipcRenderer.on("B", (e, ...args) => func(e, ...args));
+const MainIPC: MainApi = {
+  consoleLog: function (msg: string) {
+    void ipcRenderer.invoke('CONSOLE_LOG', msg);
   },
 };
 
-contextBridge.exposeInMainWorld("api", api);
+//! MAKE SURE THIS ALIGNS WITH src/renderer/lib/types.d.ts
+contextBridge.exposeInMainWorld('TASQUE', {
+  WINDOW_ACTION_API: WindowActionsIPC,
+  MAIN_API: MainIPC,
+});

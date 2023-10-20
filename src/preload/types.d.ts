@@ -1,14 +1,21 @@
-export type Main_Window_API = {
+export type WindowActionApi = {
   /**
-   * sends a message through channel A
-   * 
-   * @param msg - the message you want to send
+   * closes the main window
    */
-  closeWindow: () => void,
+  closeWindow: () => void;
   /**
-   * puts a callback on messages sent from main through channel B
-   * 
-   * @param func 
+   * closes the main window
    */
-  receiveFromB: (func: Function) => void,
+  minimizeWindow: () => void;
+  /**
+   * closes the main window
+   */
+  maximizeWindow: () => void;
+};
+
+export type MainApi = {
+  /**
+   * Logs to the main console
+   */
+  consoleLog: (msg: string) => void;
 };

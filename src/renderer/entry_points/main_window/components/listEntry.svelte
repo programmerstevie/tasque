@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let title: string = "";
-  export let description: string = "";
+  export let title: string = '';
+  export let description: string = '';
   export let checked: boolean = false;
   export const priority: 'Least Concern' | 'Normal Concern' | 'High Concern' = 'Least Concern';
 </script>

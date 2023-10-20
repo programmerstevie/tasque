@@ -1,7 +1,7 @@
 import Window from './Window.svelte';
 
 const window = new Window({
-	target: document.body,
+  target: document.body,
 });
 
 export default window;
