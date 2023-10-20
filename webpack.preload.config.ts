@@ -1,8 +1,8 @@
-import type { Configuration } from "webpack";
+import type { Configuration } from 'webpack';
 
 const preloadConfig: Configuration = {
-  entry: "./src/preload/main_window.ts",
-  target: "electron-preload",
+  entry: './src/preload/main_window.ts',
+  target: 'electron-preload',
   module: {
     rules: [
       {
@@ -10,15 +10,15 @@ const preloadConfig: Configuration = {
         // relocator loader generates a "fake" .node file which is really
         // a cjs file.
         test: /native_modules[/\\].+\.node$/,
-        use: "node-loader",
+        use: 'node-loader',
       },
       {
         test: /\.(m?js|node)$/,
         parser: { amd: false },
         use: {
-          loader: "@vercel/webpack-asset-relocator-loader",
+          loader: '@vercel/webpack-asset-relocator-loader',
           options: {
-            outputAssetBase: "native_modules",
+            outputAssetBase: 'native_modules',
           },
         },
       },
@@ -26,7 +26,7 @@ const preloadConfig: Configuration = {
         test: /\.ts$/,
         exclude: /(node_modules|\.webpack)/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
             transpileOnly: true,
           },

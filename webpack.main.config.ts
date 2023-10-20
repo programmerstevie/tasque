@@ -1,10 +1,11 @@
 // const path = require("path");
 
-import { Configuration } from "webpack";
+import { Configuration } from 'webpack';
 
 const mainConfig: Configuration = {
-  entry: "./src/main/main.ts",
-  target: "electron-main",
+  entry: './src/main/main.ts',
+  devtool: 'inline-source-map',
+  target: 'electron-main',
   module: {
     rules: [
       {
@@ -12,15 +13,15 @@ const mainConfig: Configuration = {
         // relocator loader generates a "fake" .node file which is really
         // a cjs file.
         test: /native_modules[/\\].+\.node$/,
-        use: "node-loader",
+        use: 'node-loader',
       },
       {
         test: /\.(m?js|node)$/,
         parser: { amd: false },
         use: {
-          loader: "@vercel/webpack-asset-relocator-loader",
+          loader: '@vercel/webpack-asset-relocator-loader',
           options: {
-            outputAssetBase: "native_modules",
+            outputAssetBase: 'native_modules',
           },
         },
       },
@@ -28,13 +29,16 @@ const mainConfig: Configuration = {
         test: /\.ts$/,
         exclude: /(node_modules|\.webpack)/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
             // transpileOnly: true,
           },
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
 };
 

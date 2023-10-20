@@ -1,5 +1,5 @@
 {
-	"extends": "@tsconfig/svelte/tsconfig.json",
+  "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
     "module": "ESNext",
     "noImplicitAny": true,
@@ -18,15 +18,16 @@
       "renderLib/*": ["src/renderer/lib/*"]
     },
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": true
   },
   "include": ["src/**/*", "src/node_modules", "global.d.ts"],
-	"exclude": ["node_modules/*"],
+  "exclude": ["node_modules/*"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
       "esModuleInterop": true,
       "verbatimModuleSyntax": false
-    },
+    }
   }
 }

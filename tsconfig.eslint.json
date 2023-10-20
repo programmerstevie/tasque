@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "types": ["@types/node"],
+    "noEmit": true,
+    "allowJs": true
+  },
+  "extends": "./tsconfig.json",
+  "include": [
+    ".eslintrc.js",
+    "prettier.config.js",
+    "postcss.config.js",
+    "webpack.main.config.ts",
+    "webpack.preload.config.ts",
+    "webpack.renderer.config.ts",
+    "forge.config.ts"
+  ]
+}
