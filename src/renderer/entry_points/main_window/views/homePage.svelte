@@ -1,5 +1,6 @@
 <script lang="ts">
   import WindowHeader from '../components/WindowHeader/windowHeader.svelte';
+  import UtilList from '../components/UtilList/utilList.svelte';
 
   import SearchBar from '../components/searchBar.svelte';
 </script>
@@ -11,7 +12,9 @@
     <section class="searchBar">
       <SearchBar />
     </section>
-    <section class="tools"></section>
+    <section class="tools">
+      <UtilList />
+    </section>
   </main>
 </div>
 
@@ -46,8 +49,9 @@
       .tools {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         margin-top: 20px;
+        // background-color: red;
       }
     }
   }

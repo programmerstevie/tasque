@@ -1,16 +1,10 @@
 import { type BrowserWindowConstructorOptions } from 'electron';
 
 /**
- * @description Electron Forge "main_window" html entry point (forge.config.ts)
- * @example let mainWindow = new BrowserWindow(...);
-    mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
- */
-export declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
-
-/**
  * @description Electron Forge "main_window" preload entry point (forge.config.ts)
+ * @desc WARNING!: Cannot be exported, must be re-declared in the file it's used in.
  */
-export declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
+declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
 /**
  * @description Electron BrowserWindow Constructor Options for Tasque Main Window

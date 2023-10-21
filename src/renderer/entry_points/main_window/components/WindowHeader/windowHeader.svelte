@@ -1,7 +1,7 @@
 <script lang="ts">
-  import add_icon from '../../../../resources/icons/Add Icon.svg';
-  import exit_icon from '../../../../resources/icons/Exit Icon.svg';
-  import settings_icon from '../../../../resources/icons/Settings Icon.svg';
+  import add_icon from 'renderResources/icons/Add Icon.svg';
+  import exit_icon from 'renderResources/icons/Exit Icon.svg';
+  import settings_icon from 'renderResources/icons/Settings Icon.svg';
 
   import WindowHeaderButton from './windowHeaderButton.svelte';
 </script>

@@ -1,9 +1,14 @@
-import { BrowserWindow } from 'electron/main';
-import {
-  MAIN_WINDOW_CONSTRUCTOR_OPTIONS,
-  MAIN_WINDOW_WEBPACK_ENTRY,
-} from './const';
+import { BrowserWindow } from 'electron';
+import { MAIN_WINDOW_CONSTRUCTOR_OPTIONS } from './const';
 import { addWindowActionHandlers } from './controller/window_action';
+
+/**
+ * @description Electron Forge "main_window" html entry point (forge.config.ts)
+ * @desc WARNING!: Cannot be exported, must be re-declared in the file it's used in.
+ * @example let mainWindow = new BrowserWindow(...);
+ *  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+ */
+declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 
 export class MainWindowState {
   _browser_window!: BrowserWindow;
@@ -21,6 +26,7 @@ export class MainWindowState {
         });
       })
       .catch((err) => {
+        console.log('ERROR');
         console.log(err);
       });
   }
