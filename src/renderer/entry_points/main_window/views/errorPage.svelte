@@ -1,7 +1,4 @@
 <script lang="ts">
-
 </script>
 
-<header>
-  ERROR
-</header>
+<header>ERROR</header>

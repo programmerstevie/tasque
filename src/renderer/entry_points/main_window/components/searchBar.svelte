@@ -10,10 +10,10 @@
       <span>Search...</span>
     </div>
   {/if}
-  <input class="searchBar__input" bind:value={input} />
+  <input class="searchBar__input" bind:value="{input}" />
   <button
     ><Icon
-      data={searchIcon}
+      data="{searchIcon}"
       fill="none"
       stroke="#838383"
       size="17px"

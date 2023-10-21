@@ -2,8 +2,7 @@
   import { ViewComponent } from './stores/page';
 </script>
 
-
-<svelte:component this={$ViewComponent} />
+<svelte:component this="{$ViewComponent}" />
 
 <style lang="postcss" global>
   @tailwind base;
