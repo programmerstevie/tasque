@@ -6,4 +6,6 @@ module.exports = {
   tabWidth: 2,
   semi: true,
   singleQuote: true,
+  svelteStrictMode: true,
+  plugins: ['prettier-plugin-svelte'],
 };

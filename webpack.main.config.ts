@@ -4,7 +4,7 @@ import { Configuration } from 'webpack';
 
 const mainConfig: Configuration = {
   entry: './src/main/main.ts',
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   target: 'electron-main',
   module: {
     rules: [

@@ -21,7 +21,7 @@ module.exports = {
   },
   rules: {
     semi: ['error', 'always'],
-    quotes: ['warn', 'single'],
+    quotes: ['warn', 'single', { avoidEscape: true }],
     eqeqeq: ['warn', 'always'],
     indent: ['warn', 2, { SwitchCase: 1 }],
   },

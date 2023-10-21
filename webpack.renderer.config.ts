@@ -16,6 +16,7 @@ const rendererConfig: Configuration = {
     alias: {
       svelte: path.resolve('node_modules', 'svelte/src/runtime'), // Svelte 3: path.resolve('node_modules', 'svelte')
       renderLib: path.resolve(__dirname, 'src/renderer/lib'),
+      renderResources: path.resolve(__dirname, 'src/renderer/resources'),
     },
     extensions: ['.mjs', '.js', '.svelte', '.ts'],
     mainFields: ['svelte', 'browser', 'module', 'main'],
@@ -66,6 +67,7 @@ const rendererConfig: Configuration = {
         use: {
           loader: 'svelte-loader',
           options: {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             preprocess: sveltePreprocess({
               postcss: true,
               typescript: true,

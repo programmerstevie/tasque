@@ -14,7 +14,7 @@
     "buildnstart": "npx webpack && electron-forge start",
     "build": "npx webpack",
     "dev": "electron-forge start",
-    "format": "yarn eslint --fix --ext .js,.ts,.svelte src/ && yarn prettier . --write",
+    "format": "yarn eslint --fix --ext .js,.ts,.svelte src/ && yarn prettier . --write --plugin prettier-plugin-svelte",
     "lint": "yarn eslint --ext .js,.ts,.svelte src/"
   },
   "dependencies": {

@@ -15,7 +15,8 @@
     "target": "ES2020",
     "baseUrl": "./",
     "paths": {
-      "renderLib/*": ["src/renderer/lib/*"]
+      "renderLib/*": ["src/renderer/lib/*"],
+      "renderResources/*": ["src/renderer/resources/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
