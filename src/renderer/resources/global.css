@@ -23,3 +23,41 @@ button {
 body {
   background-color: magenta;
 }
+
+button {
+  all: unset; /* Removes all default button styles */
+  cursor: pointer; /* Adds a pointer cursor on hover */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove any default border */
+  background: none; /* Remove default background */
+  font: inherit; /* Inherit font styles from parent */
+  color: inherit; /* Inherit text color */
+}
+
+.btn {
+  position: relative; /* Ensure the button is the reference point for the pseudo-element */
+}
+
+/* Add a "white film" effect on hover */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1); /* White overlay with some transparency */
+  opacity: 0;
+  transition: opacity 0.1s;
+  pointer-events: none; /* Prevent the overlay from affecting button interactions */
+}
+
+/* On hover, show the white film */
+.btn:hover::before {
+  opacity: 0.2;
+}
+
+/* On active, make the button slightly lighter */
+.btn:active::before {
+  opacity: 0.3; /* Lighten the background color */
+}

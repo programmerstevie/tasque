@@ -1,8 +1,10 @@
 // Modules to control application life and create native browser window
-import { app, BrowserWindow, ipcMain, globalShortcut } from 'electron';
+import { app, BrowserWindow, ipcMain, globalShortcut, Menu } from 'electron';
 
 // import { addWindowActionHandlers } from './controller/window_action';
 import { ApplicationState } from './state';
+
+Menu.setApplicationMenu(null);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -29,6 +31,15 @@ app
     ipcMain.handle('CONSOLE_LOG', (_e, msg: string) => {
       console.log(msg);
     });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ipcMain.handle('GET_UTILS', (_) => {
+      return ApplicationState.availableTools;
+    });
+
+    ipcMain.handle('OPEN_TOOL', (_, tool_id) => {
+      // console.log(tool_id);
+      return ApplicationState.openToolWindow(tool_id);
+    })
     // app.on('before-quit', ()=)
   })
   .catch((err) => {

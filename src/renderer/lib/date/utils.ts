@@ -1,6 +1,6 @@
 import Date_Constants from './constants';
 
-const Date_Utils = {
+const Date_Tools = {
   /**
    * gets the year from a date object
    *
@@ -62,4 +62,4 @@ const Date_Utils = {
   },
 };
 
-export default Date_Utils;
+export default Date_Tools;

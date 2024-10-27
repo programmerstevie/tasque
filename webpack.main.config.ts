@@ -1,5 +1,6 @@
 // const path = require("path");
 
+import path from 'path';
 import { Configuration } from 'webpack';
 
 const mainConfig: Configuration = {
@@ -38,6 +39,9 @@ const mainConfig: Configuration = {
     ],
   },
   resolve: {
+    alias: {
+      '@api': path.resolve(__dirname, 'src/api'),
+    },
     extensions: ['.ts', '.js'],
   },
 };

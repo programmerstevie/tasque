@@ -16,7 +16,8 @@
     "baseUrl": "./",
     "paths": {
       "renderLib/*": ["src/renderer/lib/*"],
-      "renderResources/*": ["src/renderer/resources/*"]
+      "renderResources/*": ["src/renderer/resources/*"],
+      "@api/*": ["src/api/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

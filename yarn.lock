@@ -5416,6 +5416,11 @@ svelte-dev-helper@^1.1.9:
   resolved "https://registry.yarnpkg.com/svelte-dev-helper/-/svelte-dev-helper-1.1.9.tgz#7d187db5c6cdbbd64d75a32f91b8998bde3273c3"
   integrity sha512-oU+Xv7Dl4kRU2kdFjsoPLfJfnt5hUhsFUZtuzI3Ku/f2iAFZqBoEuXOqK3N9ngD4dxQOmN4OKWPHVi3NeAeAfQ==
 
+svelte-dnd-action@^0.9.31:
+  version "0.9.31"
+  resolved "https://registry.yarnpkg.com/svelte-dnd-action/-/svelte-dnd-action-0.9.31.tgz#99a1323eb3aee9af1ddc76a9661c639942c8fdbc"
+  integrity sha512-rUracVJOQkh1g5mCF4TM/IM4f41eUFoNAcO2ctCY4czKyprmPSQipe64vhp+OptWwtw7t8dflD7IIPHvjCwpmQ==
+
 "svelte-eslint-parser@>=0.33.0 <1.0.0":
   version "0.33.1"
   resolved "https://registry.yarnpkg.com/svelte-eslint-parser/-/svelte-eslint-parser-0.33.1.tgz#c64dbed2fad099577429b3c39377f6b8d36e5d97"

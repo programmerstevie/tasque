@@ -17,6 +17,7 @@ const rendererConfig: Configuration = {
       svelte: path.resolve('node_modules', 'svelte/src/runtime'), // Svelte 3: path.resolve('node_modules', 'svelte')
       renderLib: path.resolve(__dirname, 'src/renderer/lib'),
       renderResources: path.resolve(__dirname, 'src/renderer/resources'),
+      '@api': path.resolve(__dirname, 'src/api'),
     },
     extensions: ['.mjs', '.js', '.svelte', '.ts'],
     mainFields: ['svelte', 'browser', 'module', 'main'],
